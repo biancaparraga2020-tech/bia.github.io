@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Site Romântico 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+
+      background-image: url("coracao.jpg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      color: black;
+      width: 60%;
+      margin: 100px auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: deeppink;
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    button {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: deeppink;
+      transform: scale(1.05);
+    }
+
+    @keyframes cair {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>oi migas 💕</h1>
+    <p>amo vcs</p>
+
+    <button onclick="soltarCoracoes()">Clique aqui 💖</button>
+  </div>
+
+  <script>
+    function soltarCoracoes() {
+      for (let i = 0; i < 20; i++) {
+        let coracao = document.createElement("div");
+        coracao.innerHTML = "💖";
+        coracao.style.position = "fixed";
+        coracao.style.left = Math.random() * window.innerWidth + "px";
+        coracao.style.top = "0px";
+        coracao.style.fontSize = "24px";
+        coracao.style.animation = "cair 3s linear";
+        document.body.appendChild(coracao);
+
+        setTimeout(() => {
+          coracao.remove();
+        }, 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>
